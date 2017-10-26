@@ -1,12 +1,12 @@
 package com.dylange.viper.login
 
-import com.dylange.viper.data.DataManager
+import com.dylange.viper.data.DataManagerContract
 
 /**
  * Created by dylanlange on 27/10/17.
  */
 
-class LoginInteractor(val mDataManager: DataManager): LoginContract.Interactor {
+class LoginInteractor(val mDataManager: DataManagerContract): LoginContract.Interactor {
 
 	override fun attemptLogin(successCallback: () -> Unit, failureCallback: () -> Unit) {
 		TODO()
