@@ -3,15 +3,15 @@ package com.dylange.viper.splash
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.support.v7.app.AppCompatActivity
 import com.dylange.viper.R
-import com.dylange.viper.base.BaseActivity
 import com.dylange.viper.main.MainActivity
 
 /**
  * Created by dylanlange on 27/10/17.
  */
 
-class SplashActivity: BaseActivity() {
+class SplashActivity: AppCompatActivity() {//extend appcompatactivity because not following standard arch
 
 	private val mHandler = Handler()
 

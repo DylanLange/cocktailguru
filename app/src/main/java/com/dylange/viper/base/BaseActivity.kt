@@ -1,6 +1,7 @@
 package com.dylange.viper.base
 
 import android.graphics.drawable.Drawable
+import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 
@@ -15,6 +16,31 @@ open class BaseActivity: AppCompatActivity(), BaseContract.View {
 
 	private val mStandardDialog: AlertDialog? = null
 	private val mProgressDialog: AlertDialog? = null
+
+	override fun onCreate(savedInstanceState: Bundle?) {
+		super.onCreate(savedInstanceState)
+		mPresenter.onCreateCalled(savedInstanceState, intent.extras)
+	}
+
+	override fun onDestroy() {
+		super.onDestroy()
+		mPresenter.onDestroyCalled()
+	}
+
+	override fun onSaveInstanceState(outState: Bundle?) {
+		super.onSaveInstanceState(outState)
+		mPresenter.onSaveInstanceStateCalled(outState)
+	}
+
+	override fun onResume() {
+		super.onResume()
+		mPresenter.onResumeCalled()
+	}
+
+	override fun onPause() {
+		super.onPause()
+		mPresenter.onPauseCalled()
+	}
 
 	override fun showStandardDialog(title: String,
 	                                body: String,
