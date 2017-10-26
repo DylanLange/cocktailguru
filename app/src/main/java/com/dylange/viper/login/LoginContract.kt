@@ -9,15 +9,18 @@ import com.dylange.viper.base.BaseContract
 interface LoginContract {
 
 	interface View: BaseContract.View {
-
+		fun goToMain()
 	}
 
 	interface Presenter: BaseContract.Presenter {
-
+		fun loginBtnClicked()
+		fun loginSucceeded()
+		fun loginFailed()
 	}
 
 	interface Interactor: BaseContract.Interactor {
-
+		fun attemptLogin(successCallback: () -> Unit,
+		                 failureCallback: () -> Unit)
 	}
 
 }

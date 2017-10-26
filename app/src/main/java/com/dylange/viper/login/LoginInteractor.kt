@@ -8,4 +8,8 @@ import com.dylange.viper.data.DataManager
 
 class LoginInteractor(val mDataManager: DataManager): LoginContract.Interactor {
 
+	override fun attemptLogin(successCallback: () -> Unit, failureCallback: () -> Unit) {
+		TODO()
+	}
+
 }

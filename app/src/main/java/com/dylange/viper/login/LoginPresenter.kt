@@ -29,4 +29,14 @@ class LoginPresenter(override val mView: LoginContract.View,
 
 	}
 
+	override fun loginBtnClicked() = mInteractor.attemptLogin(this::loginSucceeded, this::loginFailed)
+
+	override fun loginSucceeded() {
+		mView.goToMain()
+	}
+
+	override fun loginFailed(/*TODO: pass through error here in whatever form it may be*/) {
+		mView.handleError(Throwable("Login Failed"))
+	}
+
 }
