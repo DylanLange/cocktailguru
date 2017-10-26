@@ -6,4 +6,7 @@ package com.dylange.viper.data
 
 object DataManager {
 
+	private val mRemoteData: RemoteDataEntity = RemoteDataEntity.getInstance()
+	private val mLocalData: LocalDataEntity = LocalDataEntity.getInstance()
+
 }
