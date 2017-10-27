@@ -1,11 +1,11 @@
-package com.dylange.viper.main
+package com.dylange.cocktailguru.main
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import com.dylange.viper.R
-import com.dylange.viper.base.BaseActivity
-import com.dylange.viper.data.DataManager
+import com.dylange.cocktailguru.R
+import com.dylange.cocktailguru.base.BaseActivity
+import com.dylange.cocktailguru.data.DataManager
 
 class MainActivity : BaseActivity(), MainContract.View {
 

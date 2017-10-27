@@ -1,7 +1,7 @@
-package com.dylange.viper.splash
+package com.dylange.cocktailguru.splash
 
 import android.os.Handler
-import com.dylange.viper.base.BaseContract
+import com.dylange.cocktailguru.base.BaseContract
 
 /**
  * Created by dylanlange on 27/10/17.

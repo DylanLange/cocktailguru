@@ -1,6 +1,6 @@
-package com.dylange.viper.login
+package com.dylange.cocktailguru.login
 
-import com.dylange.viper.base.BaseContract
+import com.dylange.cocktailguru.base.BaseContract
 
 /**
  * Created by dylanlange on 27/10/17.

@@ -1,4 +1,4 @@
-package com.dylange.viper.splash
+package com.dylange.cocktailguru.splash
 
 import android.os.Bundle
 
@@ -9,7 +9,7 @@ import android.os.Bundle
 class SplashPresenter(override val mView: SplashContract.View,
                       override val mInteractor: SplashContract.Interactor): SplashContract.Presenter {
 
-	override fun onCreateCalled(savedInstanceState: Bundle?, extras: Bundle) {
+	override fun onCreateCalled(savedInstanceState: Bundle?, extras: Bundle?) {
 		if(mInteractor.isLoggedIn()) {
 			mView.goToMain()
 		} else {

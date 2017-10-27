@@ -1,4 +1,4 @@
-package com.dylange.viper.data
+package com.dylange.cocktailguru.data
 
 /**
  * Created by dylanlange on 27/10/17.

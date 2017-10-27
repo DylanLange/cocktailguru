@@ -1,4 +1,4 @@
-package com.dylange.viper.main
+package com.dylange.cocktailguru.main
 
 import android.os.Bundle
 
@@ -9,7 +9,7 @@ import android.os.Bundle
 class MainPresenter(override val mView: MainContract.View,
                     override val mInteractor: MainContract.Interactor): MainContract.Presenter {
 
-	override fun onCreateCalled(savedInstanceState: Bundle?, extras: Bundle) {
+	override fun onCreateCalled(savedInstanceState: Bundle?, extras: Bundle?) {
 
 	}
 

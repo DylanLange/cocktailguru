@@ -1,12 +1,12 @@
-package com.dylange.viper.splash
+package com.dylange.cocktailguru.splash
 
 import android.os.Bundle
 import android.os.Handler
-import com.dylange.viper.R
-import com.dylange.viper.base.BaseActivity
-import com.dylange.viper.data.DataManager
-import com.dylange.viper.login.LoginActivity
-import com.dylange.viper.main.MainActivity
+import com.dylange.cocktailguru.R
+import com.dylange.cocktailguru.base.BaseActivity
+import com.dylange.cocktailguru.data.DataManager
+import com.dylange.cocktailguru.login.LoginActivity
+import com.dylange.cocktailguru.main.MainActivity
 
 /**
  * Created by dylanlange on 27/10/17.

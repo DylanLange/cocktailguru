@@ -1,4 +1,4 @@
-package com.dylange.viper.base
+package com.dylange.cocktailguru.base
 
 import android.graphics.drawable.Drawable
 import android.os.Bundle

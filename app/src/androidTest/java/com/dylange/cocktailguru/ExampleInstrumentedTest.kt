@@ -1,4 +1,4 @@
-package com.dylange.viper
+package com.dylange.cocktailguru
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

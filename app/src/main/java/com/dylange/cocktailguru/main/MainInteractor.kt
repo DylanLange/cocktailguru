@@ -1,6 +1,6 @@
-package com.dylange.viper.main
+package com.dylange.cocktailguru.main
 
-import com.dylange.viper.data.DataManagerContract
+import com.dylange.cocktailguru.data.DataManagerContract
 
 /**
  * Created by dylanlange on 27/10/17.

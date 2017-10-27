@@ -1,4 +1,4 @@
-package com.dylange.viper
+package com.dylange.cocktailguru
 
 import org.junit.Test
 

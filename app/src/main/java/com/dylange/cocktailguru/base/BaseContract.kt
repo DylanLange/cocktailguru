@@ -1,4 +1,4 @@
-package com.dylange.viper.base
+package com.dylange.cocktailguru.base
 
 import android.graphics.drawable.Drawable
 import android.os.Bundle
@@ -34,7 +34,7 @@ interface BaseContract {
 	interface Presenter {
 		val mView: View
 		val mInteractor: Interactor
-		fun onCreateCalled(savedInstanceState: Bundle?, extras: Bundle)
+		fun onCreateCalled(savedInstanceState: Bundle?, extras: Bundle?)
 		fun onDestroyCalled()
 		fun onSaveInstanceStateCalled(outState: Bundle?)
 		fun onResumeCalled()
