@@ -8,42 +8,42 @@ import rx.Single
  * Created by dylanlange on 27/10/17.
  */
 
-interface CocktailRemoteService: RemoteContract {
+interface CocktailRemoteService {
 
 	@GET("/random.php")
-	override fun getRandomCocktail(): Single<Cocktail>
+	fun getRandomCocktail(): Single<Cocktail>
 
 	@GET("/search.php")
-	override fun searchCocktailsByName(@Query("s") name: String): Single<Cocktail.ListWrapper>
+	fun searchCocktailsByName(@Query("s") name: String): Single<Cocktail.ListWrapper>
 
 	@GET("/search.php")
-	override fun getIngredientByName(@Query("i") name: String): Single<Cocktail.ListWrapper>
+	fun getIngredientByName(@Query("i") name: String): Single<Cocktail.ListWrapper>
 
 	@GET("/lookup.php")
-	override fun getCocktailById(@Query("i") id: String): Single<Cocktail.ListWrapper>
+	fun getCocktailById(@Query("i") id: String): Single<Cocktail.ListWrapper>
 
 	@GET("/filter.php")
-	override fun getCocktailsByIngredient(@Query("i") ingredient: String): Single<Cocktail.ListWrapper>
+	fun getCocktailsByIngredient(@Query("i") ingredient: String): Single<Cocktail.ListWrapper>
 
 	@GET("/filter.php")
-	override fun getCocktailsByGlass(@Query("g") glass: String): Single<Cocktail.ListWrapper>
+	fun getCocktailsByGlass(@Query("g") glass: String): Single<Cocktail.ListWrapper>
 
 	@GET("/filter.php")
-	override fun getCocktailsByCategory(@Query("c") category: String): Single<Cocktail.ListWrapper>
+	fun getCocktailsByCategory(@Query("c") category: String): Single<Cocktail.ListWrapper>
 
 	@GET("/filter.php")
-	override fun getCocktailsByAlcoholLevel(@Query("a") alcoholLevel: String): Single<Cocktail.ListWrapper>
+	fun getCocktailsByAlcoholLevel(@Query("a") alcoholLevel: String): Single<Cocktail.ListWrapper>
 
 	@GET("/list.php?c=list")
-	override fun getCategoryList(): Single<Category.ListWrapper>
+	fun getCategoryList(): Single<Category.ListWrapper>
 
 	@GET("/list.php?a=list")
-	override fun getAlcoholicLevelList(): Single<AlcoholicLevel.ListWrapper>
+	fun getAlcoholicLevelList(): Single<AlcoholicLevel.ListWrapper>
 
 	@GET("/list.php?g=list")
-	override fun getGlassList(): Single<Glass.ListWrapper>
+	fun getGlassList(): Single<Glass.ListWrapper>
 
 	@GET("/list.php?i=list")
-	override fun getIngredientList(): Single<Ingredient.ListWrapper>
+	fun getIngredientList(): Single<Ingredient.ListWrapper>
 
 }
