@@ -1,17 +1,18 @@
 package com.dylange.cocktailguru.data
 
-import rx.Single
+import io.reactivex.Single
+
 
 /**
  * Created by dylanlange on 27/10/17.
  */
 
-object DataManager: DataManagerContract, RemoteContract {
+object DataManager: DataManagerContract {
 
 	override val mRemoteData: RemoteDataEntity = RemoteDataEntity.getInstance()
 	override val mLocalData: LocalDataEntity = LocalDataEntity.getInstance()
 
-	override fun getRandomCocktail(): Single<Cocktail> =
+	override fun getRandomCocktail(): Single<Cocktail.ListWrapper> =
 			mRemoteData.getRandomCocktail()
 
 	override fun searchCocktailsByName(name: String): Single<Cocktail.ListWrapper> =

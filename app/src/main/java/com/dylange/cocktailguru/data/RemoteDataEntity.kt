@@ -2,20 +2,21 @@ package com.dylange.cocktailguru.data
 
 import com.dylange.cocktailguru.app.COCKTAIL_BASE_URL
 import com.google.gson.Gson
-import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
+import com.google.gson.GsonBuilder
+import io.reactivex.Single
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
-import rx.Single
-import rx.android.schedulers.AndroidSchedulers
-import rx.schedulers.Schedulers
 import java.util.concurrent.TimeUnit
 
 /**
  * Created by dylanlange on 27/10/17.
  */
 interface RemoteContract {
-	fun getRandomCocktail(): Single<Cocktail>
+	fun getRandomCocktail(): Single<Cocktail.ListWrapper>
 	fun searchCocktailsByName(name: String): Single<Cocktail.ListWrapper>
 	fun getIngredientByName(name: String): Single<Cocktail.ListWrapper>
 	fun getCocktailById(id: String): Single<Cocktail.ListWrapper>
@@ -33,7 +34,7 @@ interface RemoteContract {
 class RemoteDataEntity(private val mCocktailRemote: CocktailRemoteService): RemoteContract {
 
 	companion object {
-		private var mGson = Gson()
+		private var mGson = GsonBuilder().setLenient().create()
 		@JvmStatic private var mInstance: RemoteDataEntity? = null
 		@JvmStatic fun getInstance()= mInstance ?: RemoteDataEntity(getCocktailRemote())
 
@@ -61,7 +62,7 @@ class RemoteDataEntity(private val mCocktailRemote: CocktailRemoteService): Remo
 						.client(client)
 	}
 
-	override fun getRandomCocktail(): Single<Cocktail> =
+	override fun getRandomCocktail(): Single<Cocktail.ListWrapper> =
 			sub(mCocktailRemote.getRandomCocktail())
 
 	override fun searchCocktailsByName(name: String): Single<Cocktail.ListWrapper> =

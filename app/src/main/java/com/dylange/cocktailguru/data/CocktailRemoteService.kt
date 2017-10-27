@@ -1,8 +1,8 @@
 package com.dylange.cocktailguru.data
 
+import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
-import rx.Single
 
 /**
  * Created by dylanlange on 27/10/17.
@@ -11,7 +11,7 @@ import rx.Single
 interface CocktailRemoteService {
 
 	@GET("/random.php")
-	fun getRandomCocktail(): Single<Cocktail>
+	fun getRandomCocktail(): Single<Cocktail.ListWrapper>
 
 	@GET("/search.php")
 	fun searchCocktailsByName(@Query("s") name: String): Single<Cocktail.ListWrapper>
