@@ -25,6 +25,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    packagingOptions {
+        exclude 'META-INF/maven/com.squareup.retrofit/retrofit/pom.properties'
+        exclude 'META-INF/maven/com.squareup.retrofit/retrofit/pom.xml'
+        exclude 'META-INF/rxjava.properties'
+    }
 }
 
 dependencies {
