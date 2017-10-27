@@ -8,30 +8,42 @@ import rx.Single
  * Created by dylanlange on 27/10/17.
  */
 
-interface CocktailRemoteService {
+interface CocktailRemoteService: RemoteContract {
 
 	@GET("/random.php")
-	fun getRandomCocktail(): Single<Cocktail>
+	override fun getRandomCocktail(): Single<Cocktail>
 
 	@GET("/search.php")
-	fun searchCocktailsByName(@Query("s") name: String): Single<CocktailList>
+	override fun searchCocktailsByName(@Query("s") name: String): Single<Cocktail.ListWrapper>
 
 	@GET("/search.php")
-	fun getIngredientByName(@Query("i") name: String): Single<CocktailList>
+	override fun getIngredientByName(@Query("i") name: String): Single<Cocktail.ListWrapper>
 
 	@GET("/lookup.php")
-	fun getCocktailById(@Query("i") id: String): Single<CocktailList>
+	override fun getCocktailById(@Query("i") id: String): Single<Cocktail.ListWrapper>
 
 	@GET("/filter.php")
-	fun getCocktailsByIngredient(@Query("i") ingredient: String): Single<CocktailList>
+	override fun getCocktailsByIngredient(@Query("i") ingredient: String): Single<Cocktail.ListWrapper>
 
 	@GET("/filter.php")
-	fun getCocktailsByGlass(@Query("g") glass: String): Single<CocktailList>
+	override fun getCocktailsByGlass(@Query("g") glass: String): Single<Cocktail.ListWrapper>
 
 	@GET("/filter.php")
-	fun getCocktailsByCategory(@Query("c") category: String): Single<CocktailList>
+	override fun getCocktailsByCategory(@Query("c") category: String): Single<Cocktail.ListWrapper>
 
 	@GET("/filter.php")
-	fun getCocktailsByAlcoholLevel(@Query("a") alcoholLevel: String): Single<CocktailList>
+	override fun getCocktailsByAlcoholLevel(@Query("a") alcoholLevel: String): Single<Cocktail.ListWrapper>
+
+	@GET("/list.php?c=list")
+	override fun getCategoryList(): Single<Category.ListWrapper>
+
+	@GET("/list.php?a=list")
+	override fun getAlcoholicLevelList(): Single<AlcoholicLevel.ListWrapper>
+
+	@GET("/list.php?g=list")
+	override fun getGlassList(): Single<Glass.ListWrapper>
+
+	@GET("/list.php?i=list")
+	override fun getIngredientList(): Single<Ingredient.ListWrapper>
 
 }

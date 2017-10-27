@@ -14,7 +14,23 @@ import java.util.concurrent.TimeUnit
 /**
  * Created by dylanlange on 27/10/17.
  */
-class RemoteDataEntity(private val mCocktailRemote: CocktailRemoteService) {
+interface RemoteContract {
+	fun getRandomCocktail(): Single<Cocktail>
+	fun searchCocktailsByName(name: String): Single<Cocktail.ListWrapper>
+	fun getIngredientByName(name: String): Single<Cocktail.ListWrapper>
+	fun getCocktailById(id: String): Single<Cocktail.ListWrapper>
+	fun getCocktailsByIngredient(ingredient: String): Single<Cocktail.ListWrapper>
+	fun getCocktailsByGlass(glass: String): Single<Cocktail.ListWrapper>
+	fun getCocktailsByCategory(category: String): Single<Cocktail.ListWrapper>
+	fun getCocktailsByAlcoholLevel(alcoholLevel: String): Single<Cocktail.ListWrapper>
+
+	fun getCategoryList(): Single<Category.ListWrapper>
+	fun getAlcoholicLevelList(): Single<AlcoholicLevel.ListWrapper>
+	fun getGlassList(): Single<Glass.ListWrapper>
+	fun getIngredientList(): Single<Ingredient.ListWrapper>
+}
+
+class RemoteDataEntity(private val mCocktailRemote: CocktailRemoteService): RemoteContract {
 
 	companion object {
 		private var mGson = Gson()
@@ -45,29 +61,41 @@ class RemoteDataEntity(private val mCocktailRemote: CocktailRemoteService) {
 						.client(client)
 	}
 
-	fun getRandomCocktail(): Single<Cocktail> =
+	override fun getRandomCocktail(): Single<Cocktail> =
 			sub(mCocktailRemote.getRandomCocktail())
 
-	fun searchCocktailsByName(name: String): Single<CocktailList> =
+	override fun searchCocktailsByName(name: String): Single<Cocktail.ListWrapper> =
 			sub(mCocktailRemote.searchCocktailsByName(name))
 
-	fun getIngredientByName(name: String): Single<CocktailList> =
+	override fun getIngredientByName(name: String): Single<Cocktail.ListWrapper> =
 			sub(mCocktailRemote.getIngredientByName(name))
 
-	fun getCocktailById(id: String): Single<CocktailList> =
+	override fun getCocktailById(id: String): Single<Cocktail.ListWrapper> =
 			sub(mCocktailRemote.getCocktailById(id))
 
-	fun getCocktailsByIngredient(ingredient: String): Single<CocktailList> =
+	override fun getCocktailsByIngredient(ingredient: String): Single<Cocktail.ListWrapper> =
 			sub(mCocktailRemote.getCocktailsByIngredient(ingredient))
 
-	fun getCocktailsByGlass(glass: String): Single<CocktailList> =
+	override fun getCocktailsByGlass(glass: String): Single<Cocktail.ListWrapper> =
 			sub(mCocktailRemote.getCocktailsByGlass(glass))
 
-	fun getCocktailsByCategory(category: String): Single<CocktailList> =
+	override fun getCocktailsByCategory(category: String): Single<Cocktail.ListWrapper> =
 			sub(mCocktailRemote.getCocktailsByCategory(category))
 
-	fun getCocktailsByAlcoholLevel(alcoholLevel: String): Single<CocktailList> =
+	override fun getCocktailsByAlcoholLevel(alcoholLevel: String): Single<Cocktail.ListWrapper> =
 			sub(mCocktailRemote.getCocktailsByAlcoholLevel(alcoholLevel))
+
+	override fun getCategoryList(): Single<Category.ListWrapper> =
+			sub(mCocktailRemote.getCategoryList())
+
+	override fun getAlcoholicLevelList(): Single<AlcoholicLevel.ListWrapper> =
+			sub(mCocktailRemote.getAlcoholicLevelList())
+
+	override fun getGlassList(): Single<Glass.ListWrapper> =
+			sub(mCocktailRemote.getGlassList())
+
+	override fun getIngredientList(): Single<Ingredient.ListWrapper> =
+			sub(mCocktailRemote.getIngredientList())
 
 	private fun <T> sub(single: Single<T>): Single<T> =
 			single
