@@ -12,7 +12,7 @@ data class Category(
 		@SerializedName("strCategory")
 		val name: String
 ) : Parcelable {
-	data class ListWrapper(val categories: List<Category>)
+	data class ListWrapper(@SerializedName("drinks") val categories: List<Category>)
 
 	constructor(source: Parcel) : this(
 			source.readString()
@@ -34,10 +34,10 @@ data class Category(
 }
 
 data class AlcoholicLevel(
-		@SerializedName("strCategory")
+		@SerializedName("strAlcoholic")
 		val name: String
 ) : Parcelable {
-	data class ListWrapper(val alcoholicLevels: List<AlcoholicLevel>)
+	data class ListWrapper(@SerializedName("drinks") val alcoholicLevels: List<AlcoholicLevel>)
 
 	constructor(source: Parcel) : this(
 			source.readString()
@@ -59,10 +59,10 @@ data class AlcoholicLevel(
 }
 
 data class Glass(
-		@SerializedName("strCategory")
+		@SerializedName("strGlass")
 		val name: String
 ) : Parcelable {
-	data class ListWrapper(val glasses: List<Glass>)
+	data class ListWrapper(@SerializedName("drinks") val glasses: List<Glass>)
 
 	constructor(source: Parcel) : this(
 			source.readString()
@@ -84,10 +84,10 @@ data class Glass(
 }
 
 data class Ingredient(
-		@SerializedName("strCategory")
+		@SerializedName("strIngredient1")
 		val name: String
 ) : Parcelable {
-	data class ListWrapper(val ingredients: List<Ingredient>)
+	data class ListWrapper(@SerializedName("drinks") val ingredients: List<Ingredient>)
 
 	constructor(source: Parcel) : this(
 			source.readString()
