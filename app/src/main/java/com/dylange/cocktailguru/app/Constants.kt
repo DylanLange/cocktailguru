@@ -5,7 +5,7 @@ package com.dylange.cocktailguru.app
  */
 
 const val API_KEY: String = "1"
-const val COCKTAIL_BASE_URL: String = "http://www.thecocktaildb.com/api/json/v1/$API_KEY/"
+const val COCKTAIL_BASE_URL: String = "http://www.thecocktaildb.com/"
 
 //enum class GLASSES(type: String) {
 //	COCKTAIL("cocktail_glass"),
