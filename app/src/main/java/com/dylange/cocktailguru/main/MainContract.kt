@@ -14,7 +14,8 @@ interface MainContract {
 	}
 
 	interface Presenter: BaseContract.Presenter {
-
+		fun randomCocktailReceived(cocktail: Cocktail)
+		fun randomCocktailGetFailed(throwable: Throwable)
 	}
 
 	interface Interactor: BaseContract.Interactor {
