@@ -31,18 +31,26 @@ interface BaseContract {
 		fun getDraw(@DrawableRes drawableId: Int): Drawable
 	}
 
+	interface Interactor {
+
+	}
+
 	interface Presenter {
 		val mView: View
 		val mInteractor: Interactor
-		fun onCreateCalled(savedInstanceState: Bundle?, extras: Bundle?)
-		fun onDestroyCalled()
-		fun onSaveInstanceStateCalled(outState: Bundle?)
 		fun onResumeCalled()
 		fun onPauseCalled()
+		fun onSaveInstanceStateCalled(outState: Bundle?)
 	}
 
-	interface Interactor {
+	interface ActivityPresenter: Presenter {
+		fun onCreateCalled(savedInstanceState: Bundle?, extras: Bundle?)
+		fun onDestroyCalled()
+	}
 
+	interface FragmentPresenter: Presenter {
+		fun onViewCreatedCalled(savedInstanceState: Bundle?)
+		fun onDestroyViewCalled()
 	}
 
 }
