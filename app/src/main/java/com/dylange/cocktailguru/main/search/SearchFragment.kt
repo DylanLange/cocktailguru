@@ -11,6 +11,8 @@ class SearchFragment : BaseFragment(), SearchContract.View {
 
 	override val mPresenter: SearchContract.Presenter = SearchPresenter(this, SearchInteractor(DataManager))
 
-
+	companion object {
+		@JvmStatic fun newInstance() = SearchFragment()
+	}
 
 }

@@ -2,13 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_leaderboard"
+        android:id="@+id/action_random"
         android:enabled="true"
         android:icon="@drawable/ic_trophy_inactive"
         android:title="@string/tab_name_1"
         app:showAsAction="always"/>
     <item
-        android:id="@+id/action_mydrinks"
+        android:id="@+id/action_search"
         android:enabled="true"
         android:icon="@drawable/ic_search_inactive"
         android:title="@string/tab_name_2"

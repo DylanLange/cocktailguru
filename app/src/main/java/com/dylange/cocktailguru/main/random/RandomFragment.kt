@@ -11,6 +11,8 @@ class RandomFragment: BaseFragment(), RandomContract.View {
 
 	override val mPresenter: RandomContract.Presenter = RandomPresenter(this, RandomInteractor(DataManager))
 
-
+	companion object {
+		@JvmStatic fun newInstance() = RandomFragment()
+	}
 
 }
