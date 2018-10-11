@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Viper</string>
+    <string name="app_name">Cocktail Guru</string>
+    <string name="tab_name_1">Random</string>
+    <string name="tab_name_2">Search</string>
 </resources>
